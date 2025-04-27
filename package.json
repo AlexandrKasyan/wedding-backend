@@ -7,8 +7,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "tsc",
-    "migrate": "node --require ts-node/register ./node_modules/typeorm/cli migration:run -d src/data-source.ts",
-    "start": "npm run build && npm run migrate && node dist/main.js",
+    "migrate": "node --require ts-node/register ./node_modules/typeorm/cli migration:run -d ./src/data-source.ts",
+    "start": "node dist/src/main.js",
+    "render-build": "npm run build && npm run migrate",
+
     "deploy": "npm run build && npm run migrate",
     "typeorm": "ts-node ./node_modules/typeorm/cli",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
