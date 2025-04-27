@@ -5,7 +5,7 @@ config();
 
 export default new DataSource({
   type: 'postgres',
-  url: process.env.DATABASE_URL,
+  host: process.env.DATABASE_HOST,
   entities: ['dist/**/*.entity.js'],
   migrations: ['dist/migrations/*.js'],
   ssl: {
